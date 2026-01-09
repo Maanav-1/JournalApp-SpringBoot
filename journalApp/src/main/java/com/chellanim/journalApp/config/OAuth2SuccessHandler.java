@@ -41,6 +41,6 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
     String token = jwtUtils.generateToken(githubUsername);
 
     // Redirect to frontend with token in URL (or handle as per enterprise frontend needs)
-    response.sendRedirect("http://localhost:5173/public/oauth-callback?token=" + token);
+    response.sendRedirect("http://localhost:5173/oauth-callback?token=" + token);
   }
 }

@@ -59,11 +59,13 @@ public class SecurityConfig {
   @Bean
   public CorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration configuration = new CorsConfiguration();
-    // Allow your React/Vite frontend
-    configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173"));
+    // Replace with your actual Render frontend URL
+    configuration.setAllowedOrigins(Arrays.asList(
+        "https://your-frontend-name.onrender.com",
+        "http://localhost:5173"
+    ));
     configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-    configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "x-auth-token"));
-    configuration.setExposedHeaders(Arrays.asList("x-auth-token"));
+    configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
     configuration.setAllowCredentials(true);
 
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
