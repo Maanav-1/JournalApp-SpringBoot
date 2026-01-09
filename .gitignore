@@ -1,36 +1,44 @@
-../HELP.md
-journalApp/target/
-../.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# --- Secrets & Config (CRITICAL) ---
+# This ensures your new credentials never get pushed again
+application.yml
+*.yml
+*.yaml
+.env
+.env.local
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# --- Java / Maven ---
+target/
+!.mvn/wrapper/maven-wrapper.jar
+build/
+*.class
+*.jar
+*.war
+*.ear
 
-### IntelliJ IDEA ###
-.idea
+# --- Node / React / Vite ---
+node_modules/
+dist/
+dist-ssr/
+*.local
+.eslintcache
+
+# --- Docker ---
+# Ignore local logs, but keep the Dockerfile
+.dockerignore
+docker-compose.override.yml
+
+# --- IntelliJ IDEA ---
+.idea/
 *.iws
 *.iml
 *.ipr
+out/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
+# --- VS Code ---
 .vscode/
+.history/
+*.code-workspace
 
-### Custom Secrets ###
-../src/main/resources/application.yml
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
