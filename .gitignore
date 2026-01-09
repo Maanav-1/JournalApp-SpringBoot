@@ -1,6 +1,6 @@
-HELP.md
-target/
-.mvn/wrapper/maven-wrapper.jar
+../HELP.md
+journalApp/target/
+../.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
@@ -33,4 +33,4 @@ build/
 .vscode/
 
 ### Custom Secrets ###
-src/main/resources/application.yml
+../src/main/resources/application.yml
