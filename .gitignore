@@ -1,8 +1,4 @@
 # --- Secrets & Config (CRITICAL) ---
-# This ensures your new credentials never get pushed again
-application.yml
-*.yml
-*.yaml
 .env
 .env.local
 
