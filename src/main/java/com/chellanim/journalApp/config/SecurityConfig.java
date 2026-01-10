@@ -38,15 +38,16 @@ public class SecurityConfig {
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     return http
-        // 1. Handle CORS first using the bean defined below
         .cors(cors -> cors.configurationSource(corsConfigurationSource()))
         .csrf(csrf -> csrf.disable())
         .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/public/**", "/login/**").permitAll()
+            .requestMatchers("/public/**", "/login/**", "/oauth2/**").permitAll()
             .requestMatchers("/admin/**").hasRole("ADMIN")
             .anyRequest().authenticated())
+        .oauth2Login(oauth2 -> oauth2
+            .successHandler(oauth2SuccessHandler)
+        )
         .exceptionHandling(ex -> ex
-            // 2. Prevent the "Redirect not allowed" error in your browser console
             .authenticationEntryPoint((request, response, authException) -> {
               response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
             })
