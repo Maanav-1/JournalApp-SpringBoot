@@ -59,9 +59,9 @@ public class SecurityConfig {
   @Bean
   public CorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration configuration = new CorsConfiguration();
-    // Replace with your actual Render frontend URL
+    // Add your Vercel URL here
     configuration.setAllowedOrigins(Arrays.asList(
-        "https://your-frontend-name.onrender.com",
+        "https://journal-maanav.vercel.app",
         "http://localhost:5173"
     ));
     configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
